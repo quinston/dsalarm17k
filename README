@@ -1,0 +1,7 @@
+dsalarm17k
+
+A very barebones alarm clock homebrew for the Nintendo DS. 
+
+Use the D-pad to set the alarm clock time, and then press A to turn off the backlights. Once it's time, it will try to play a 17000Hz tone. This should be enough to wake young people up.
+
+Released to the public domain.
