@@ -19,11 +19,15 @@ public:
 		timeToGo = std::tm();
 
 		timeToGo.tm_hour = (currentTime->tm_hour + 7);
-		timeToGo.tm_min = (currentTime->tm_min + 30);
+		timeToGo.tm_min = (currentTime->tm_min + 45);
 		if (timeToGo.tm_min > 59) {
 			++timeToGo.tm_hour;
 			timeToGo.tm_min %= 60;
 		}
+		if (timeToGo.tm_hour > 23) {
+			timeToGo.tm_hour %= 24;
+		}
+
 
 		delete currentTime;
 	}
@@ -86,7 +90,7 @@ public:
 
 	enum EDITMODE {
 		HOUR = 1,
-		MINUTE
+		MINUTE = 2
 	};
 	EDITMODE getMode() {
 		return mode;
@@ -212,7 +216,6 @@ int main() {
 		}
 
 		if (keysPressed & KEY_A) {
-
 			a.toggleSnooze();
 
 			if (a.getSnooze()) {
@@ -223,8 +226,6 @@ int main() {
 				powerOff(PM_BACKLIGHT_BOTTOM);
 				powerOff(PM_BACKLIGHT_TOP);
 			}
-
-
 		}
 
 		a.checkAlarm();
