@@ -78,6 +78,7 @@ public:
 			else {
 				--timeToGo.tm_hour;
 			}
+			break;
 		case MINUTE:
 			if (timeToGo.tm_min == 0) {
 				timeToGo.tm_min = 59;
